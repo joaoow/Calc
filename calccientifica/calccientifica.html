@@ -1,0 +1,968 @@
+
+<!-- ONE STEP TO INSTALL ADVANCED CALCULATOR 2:
+
+
+
+  1.  Copy the coding into the BODY of your HTML document  -->
+
+
+
+<!-- STEP ONE: Paste this code into the BODY of your HTML document  -->
+
+
+
+<BODY>
+
+
+
+<!-- This script and many more are available free online at -->
+
+<!-- The JavaScript Source!! http://javascript.internet.com -->
+
+<!-- Original:  Haroon Sarwar (novrain84@hotmail.com) -->
+
+<FORM id=form1 name=form1>
+
+<TABLE cellSpacing=2 cellPadding=2 width="75" border=0 style="WIDTH: 75px" bgColor=linen background="back.png">
+
+  <TR>
+
+    <TD colSpan=5>
+
+      <P align=center> </P></TD></TR>
+
+  
+
+  <TR>   
+
+    <TD colSpan=5>
+
+      <P align=center><INPUT 
+
+      style="WIDTH: 453px; HEIGHT: 26px" size=57 name=display 
+
+      value=0></P></TD></TR>
+
+  <TR>
+
+    <TD>
+
+      <P align=center> </P></TD>
+
+    <TD>
+
+      <P align=center> </P></TD>
+
+    <TD>
+
+      <P align=center> </P></TD>
+
+    <TD>
+
+      <P align=center> </P></TD>
+
+    <TD>
+
+      <P align=center> </P></TD></TR>
+
+  <TR>
+
+    <TD>
+
+      <P align=center><INPUT type=radio CHECKED 
+
+     name=degrad 
+
+     ><FONT face="MS Sans Serif" size=2>Radians</FONT></P></TD>
+
+    <TD>
+
+      <P align=left><INPUT type=radio name=degrad 
+
+     ><FONT size=2 
+
+      face="MS Sans Serif">Degrees</FONT></P></TD>
+
+    <TD>
+
+      <P align=center><INPUT id=radio1 type=radio name=bindec onclick="BaseCon('DTOB')"><FONT 
+
+      face="MS Sans Serif" size=2>Binary</FONT></P></TD>
+
+    <TD>
+
+      <P align=left><INPUT id=radio2 type=radio name=bindec onclick="BaseCon('BTOD')"
+
+      CHECKED><FONT 
+
+      face="MS Sans Serif" size=2>Decimal</FONT></P></TD>
+
+    <TD>
+
+      <P align=center><INPUT 
+
+      style="WIDTH: 21px; HEIGHT: 22px; BACKGROUND-COLOR: linen" readOnly size=2 
+
+      name=mems></P></TD></TR>
+
+  <TR>
+
+    <TD>
+
+      <P align=center> </P></TD>
+
+    <TD>
+
+      <P align=center> </P></TD>
+
+    <TD>
+
+      <P align=center> </P></TD>
+
+    <TD>
+
+      <P align=center> </P></TD>
+
+    <TD>
+
+      <P align=center> </P></TD></TR>
+
+  <TR>
+
+    <TD>
+
+      <P align=center><INPUT style="WIDTH: 58px; HEIGHT: 22px" type=button size=19 value=sin onclick="TrigFunc('sin')"></P></TD>
+
+    <TD>
+
+      <P align=center><INPUT style="WIDTH: 58px; HEIGHT: 22px" type=button size=19 value=cos onclick="TrigFunc('cos')"></P></TD>
+
+    <TD>
+
+      <P align=center><INPUT style="WIDTH: 58px; HEIGHT: 22px" type=button size=19 value=tan onclick="TrigFunc('tan')"></P></TD>
+
+    <TD>
+
+      <P align=center><INPUT style="WIDTH: 58px; HEIGHT: 22px" onclick="LogFunc('ln')" type=button size=19 value=ln></P></TD>
+
+    <TD>
+
+      <P align=center><INPUT id=about style="WIDTH: 74px; HEIGHT: 31px" onclick="About()" type=button size=24 value=About name=about></P></TD></TR>
+
+  <TR>
+
+    <TD>
+
+      <P align=center><INPUT style="WIDTH: 58px; HEIGHT: 22px" onclick="TrigFuncA('asin')" type=button size=19 value=asin></P></TD>
+
+    <TD>
+
+      <P align=center><INPUT style="WIDTH: 58px; HEIGHT: 22px" onclick="TrigFuncA('acos')" type=button size=19 value=acos></P></TD>
+
+    <TD>
+
+      <P align=center><INPUT style="WIDTH: 58px; HEIGHT: 22px" onclick="TrigFuncA('atan')" type=button size=19 value=atan></P></TD>
+
+    <TD>
+
+      <P align=center><INPUT style="WIDTH: 58px; HEIGHT: 22px" onclick="LogFunc('e')" type=button size=19 value=e name=e></P></TD>
+
+    <TD>
+
+      <P align=center><INPUT id=button1 style="WIDTH: 74px; HEIGHT: 31px" onclick="Pi()" type=button size=24 value=Pi name=button1></P></TD></TR>
+
+  <TR>
+
+    <TD>
+
+      <P align=center><INPUT style="WIDTH: 58px; HEIGHT: 22px" onclick="Power('sq')" type=button size=19 value=x²></P></TD>
+
+    <TD>
+
+      <P align=center><INPUT style="WIDTH: 58px; HEIGHT: 22px" onclick="Power('cu')" type=button size=19 value=x³></P></TD>
+
+    <TD>
+
+      <P align=center><INPUT style="WIDTH: 58px; HEIGHT: 22px" onclick="Power('n')" type=button size=19 value=x^n></P></TD>
+
+    <TD>
+
+      <P align=center><INPUT style="WIDTH: 58px; HEIGHT: 22px" onclick="LogFunc('log')" type=button size=19 value=log></P></TD>
+
+    <TD>
+
+      <P align=center><INPUT style="WIDTH: 74px; HEIGHT: 31px" onclick="Mem('MR')" type=button size=24 value=MR></P></TD></TR>
+
+  <TR>
+
+    <TD>
+
+      <P align=center><INPUT style="WIDTH: 58px; HEIGHT: 22px" onclick="Root('sq')" type=button size=19 value=sqrt></P></TD>
+
+    <TD>
+
+      <P align=center><INPUT style="WIDTH: 58px; HEIGHT: 22px" onclick="Root('cu')" type=button size=19 value=cubert></P></TD>
+
+    <TD>
+
+      <P align=center><INPUT style="WIDTH: 58px; HEIGHT: 22px" onclick="Root('n')" type=button size=19 value="nth root"></P></TD>
+
+    <TD>
+
+      <P align=center><INPUT style="WIDTH: 58px; HEIGHT: 22px" onclick="LogFunc('10')" type=button size=19 value=10^x></P></TD>
+
+    <TD>
+
+      <P align=center><INPUT style="WIDTH: 74px; HEIGHT: 31px" onclick="Mem('MC')" type=button size=24 value=MC></P></TD></TR>
+
+  <TR>
+
+    <TD>
+
+      <P align=center><INPUT style="WIDTH: 58px; HEIGHT: 22px" onclick="StandOp('(')" type=button size=19 value=(></P></TD>
+
+    <TD>
+
+      <P align=center><INPUT style="WIDTH: 58px; HEIGHT: 22px" onclick="StandOp(')')" type=button size=19 value=)></P></TD>
+
+    <TD>
+
+      <P align=center><INPUT style="WIDTH: 58px; HEIGHT: 22px" onclick="Fac()" type=button size=19 value=n!></P></TD>
+
+    <TD>
+
+      <P align=center><INPUT style="WIDTH: 58px; HEIGHT: 22px" onclick="StandOp('%')" type=button size=19 value=mod></P></TD>
+
+    <TD>
+
+      <P align=center><INPUT style="WIDTH: 74px; HEIGHT: 31px" onclick="Mem('MS')" type=button size=24 value=MS></P></TD></TR>
+
+  <TR>
+
+    <TD style="HEIGHT: 20px" height=20>
+
+      <P align=center> </P></TD>
+
+    <TD>
+
+      <P align=center> </P></TD>
+
+    <TD>
+
+      <P align=center> </P></TD>
+
+    <TD>
+
+      <P align=center> </P></TD>
+
+    <TD>
+
+      <P align=center> </P></TD></TR>
+
+  
+
+  <TR>
+
+    <TD>
+
+      <P align=center><INPUT style="WIDTH: 46px; COLOR: blue; HEIGHT: 31px" type=button size=15 value=7 onclick="Append('7')"></P></TD>
+
+    <TD>
+
+      <P align=center><INPUT style="WIDTH: 46px; COLOR: blue; HEIGHT: 31px" type=button size=15 value=8 onclick="Append('8')"></P></TD>
+
+    <TD>
+
+      <P align=center><INPUT style="WIDTH: 46px; COLOR: blue; HEIGHT: 31px" type=button size=15 value=9 onclick="Append('9')"></P></TD>
+
+    <TD>
+
+      <P align=center><INPUT style="WIDTH: 46px; COLOR: red; HEIGHT: 31px" type=button size=15 value=/ onclick="StandOp('/')"></P></TD>
+
+    <TD>
+
+      <P align=center><INPUT style="WIDTH: 74px; HEIGHT: 31px" onclick="Round()" type=button size=24 value=Round></P></TD></TR>
+
+  <TR>
+
+    <TD>
+
+      <P align=center><INPUT style="WIDTH: 46px; COLOR: blue; HEIGHT: 31px" type=button size=15 value=4 onclick="Append('4')"></P></TD>
+
+    <TD>
+
+      <P align=center><INPUT style="WIDTH: 46px; COLOR: blue; HEIGHT: 31px" type=button size=15 value=5 onclick="Append('5')"></P></TD>
+
+    <TD>
+
+      <P align=center><INPUT style="WIDTH: 46px; COLOR: blue; HEIGHT: 31px" type=button size=15 value=6 onclick="Append('6')"></P></TD>
+
+    <TD>
+
+      <P align=center><INPUT style="WIDTH: 46px; COLOR: red; HEIGHT: 31px" type=button size=15 value=* onclick="StandOp('*')"></P></TD>
+
+    <TD>
+
+      <P align=center><INPUT style="WIDTH: 74px; HEIGHT: 31px" onclick="Clear()" type=button size=24 value=Clear></P></TD></TR>
+
+  <TR>
+
+    <TD>
+
+      <P align=center><INPUT style="WIDTH: 46px; COLOR: blue; HEIGHT: 31px" type=button size=15 value=1 onclick="Append('1')"></P></TD>
+
+    <TD>
+
+      <P align=center><INPUT style="WIDTH: 46px; COLOR: blue; HEIGHT: 31px" type=button size=15 value=2 onclick="Append('2')"></P></TD>
+
+    <TD>
+
+      <P align=center><INPUT style="WIDTH: 46px; COLOR: blue; HEIGHT: 31px" type=button size=15 value=3 onclick="Append('3')"></P></TD>
+
+    <TD>
+
+      <P align=center><INPUT style="WIDTH: 46px; COLOR: red; HEIGHT: 31px" type=button size=15 value=- onclick="StandOp('-')"></P></TD>
+
+    <TD>
+
+      <P align=center><INPUT style="WIDTH: 74px; HEIGHT: 31px" type=button size=24 value="All Clear" onclick="AllClear()"></P></TD></TR>
+
+  <TR>
+
+    <TD>
+
+      <P align=center><INPUT style="WIDTH: 46px; COLOR: blue; HEIGHT: 31px" onclick="Append('0')" type=button size=15 value=0></P></TD>
+
+    <TD>
+
+      <P align=center><INPUT style="WIDTH: 46px; COLOR: blue; HEIGHT: 31px" onclick=RevS() type=button size=15 value=+/-></P></TD>
+
+    <TD>
+
+      <P align=center><INPUT style="WIDTH: 46px; COLOR: blue; HEIGHT: 31px" onclick=AddDec() type=button size=15 value=.></P></TD>
+
+    <TD>
+
+      <P align=center><INPUT style="WIDTH: 46px; COLOR: red; HEIGHT: 31px" onclick="StandOp('+')" type=button size=15 value=+></P></TD>
+
+    <TD>
+
+      <P align=center><INPUT style="WIDTH: 74px; HEIGHT: 31px" onclick=Evaluate() type=button size=24 value== DESIGNTIMESP="21857"></P></TD></TR>
+
+  <TR>
+
+    <TD colSpan=5>
+
+      <P align=center> </P></TD></TR>
+
+  <TR>
+
+    <TD colSpan=5>
+
+      <P align=center><TEXTAREA style="WIDTH: 476px; HEIGHT: 35px" name=history rows=1 cols=51></TEXTAREA></P></TD></TR>
+
+  <TR>
+
+    <TD colSpan=5>
+
+      <P align=center> </P></TD></TR></TABLE>
+
+</FORM>
+
+
+
+<SCRIPT LANUGAGE="JavaScript">
+
+//variables to be used during calculations
+
+var isdec=false;//this tells if the curret input has had a decimal put in it
+
+var calculation="";//this will hold the expression to be evaulated
+
+var isstart=true;//tells that a new input has to be accepted in
+
+var mem;//will hold the memory
+
+
+
+function Append(v) 
+
+{
+
+	if(isstart==true)
+
+		form1.display.value=v;
+
+	else 
+
+		form1.display.value+=v;	
+
+	isstart=false;
+
+}
+
+
+
+function AddDec()
+
+{
+
+	if(!isdec)
+
+	{
+
+		if(isstart==true)
+
+		{
+
+			form1.display.value="0.";
+
+			isstart=false;
+
+		}
+
+		else form1.display.value+=".";
+
+		isdec=true;
+
+	}
+
+}
+
+
+
+function StandOp(op)
+
+{
+
+	if(!Check(form1.display.value))
+
+		return;
+
+	
+
+	var v;
+
+	if(form1.radio1.checked)
+
+		v=BinToDec(form1.display.value);
+
+	else v=form1.display.value;
+
+	
+
+	if(op=="(")
+
+		calculation+=op;
+
+	else
+
+		calculation+=v+op;
+
+		
+
+	isstart=true;
+
+	isdec=false;
+
+}
+
+
+
+function RevS()
+
+{
+
+	form1.display.value="-"+form1.display.value;
+
+}
+
+
+
+function TrigFunc(fn)
+
+{
+
+	var val=form1.display.value;
+
+	
+
+	if(form1.degrad[1].checked)
+
+		val=ToRadians(val);
+
+			
+
+	if(fn=="sin")
+
+		val=Math.sin(val);
+
+	else if(fn=="cos")
+
+		val=Math.cos(val);
+
+	else if(fn=="tan")
+
+		val=Math.tan(val);
+
+
+
+	form1.display.value=val;	
+
+	isdec=false;
+
+	isstart=true;
+
+	
+
+}
+
+
+
+function TrigFuncA(fn)
+
+{
+
+	var val=form1.display.value;
+
+	
+
+	if(fn=="asin")
+
+		val=Math.asin(val);
+
+	else if(fn=="acos")
+
+		val=Math.acos(val);
+
+	else if(fn=="atan")
+
+		val=Math.atan(val);
+
+		
+
+	if(form1.degrad[1].checked)
+
+		val=ToDegrees(val);
+
+		
+
+	form1.display.value=val;	
+
+	isdec=false;
+
+	isstart=true;
+
+}
+
+
+
+function Power(fn)
+
+{
+
+	if(fn=="sq")
+
+		form1.display.value=Math.pow(form1.display.value,2);
+
+	else if(fn=="cu")
+
+		form1.display.value=Math.pow(form1.display.value,3);
+
+	else if(fn=="n")
+
+	{
+
+		var v=4;		
+
+		v=prompt("Enter the value of n:",v);
+
+		form1.display.value=Math.pow(form1.display.value,v);
+
+	}
+
+	
+
+	isstart=true;
+
+	isdec=false;
+
+}
+
+
+
+function Root(fn)
+
+{
+
+	if(form1.display.value<0)
+
+	{
+
+		alert("Negative number in root!");
+
+		return;
+
+	}
+
+	if(fn=="sq")
+
+		form1.display.value=Math.sqrt(form1.display.value);
+
+	else if(fn=="cu")
+
+		form1.display.value=Math.pow(form1.display.value,1/3);
+
+	else if(fn=="n")
+
+	{
+
+		var v=4;		
+
+		v=prompt("Enter the value of n:",v);
+
+		form1.display.value=Math.pow(form1.display.value,1/v);
+
+	}
+
+	
+
+	isstart=true;
+
+	isdec=false;	
+
+}
+
+
+
+function Round()
+
+{
+
+	form1.display.value=Math.round(form1.display.value);
+
+}
+
+
+
+function LogFunc(fn)
+
+{
+
+	if(fn=="ln")
+
+		form1.display.value=Math.log(form1.display.value);
+
+	else if(fn=="e")
+
+		form1.display.value=Math.exp(form1.display.value);
+
+	else if(fn=="log")
+
+		form1.display.value=Math.log(form1.display.value)/Math.log(10);
+
+	else if(fn=="10")
+
+		form1.display.value=Math.pow(10,form1.display.value);
+
+		
+
+	isstart=true;
+
+	isdec=false;
+
+}
+
+
+
+function Fac()
+
+{
+
+	form1.display.value=Factorial(form1.display.value);
+
+}
+
+
+
+function Factorial(i)
+
+{
+
+	if(i==0)
+
+		return 1;
+
+	else return i*Factorial(i-1);
+
+}
+
+
+
+function ToDegrees(v)
+
+{
+
+	return (180/Math.PI)*v;
+
+}
+
+
+
+function ToRadians(v)
+
+{
+
+	return v*Math.PI/180;
+
+}
+
+
+
+function StrRev(str) 
+
+{
+
+	if (!str) return "";
+
+	var revst="";
+
+	for (i = str.length-1; i>=0; i--)
+
+		revst+=str.charAt(i)
+
+	return revst;
+
+}
+
+
+
+function BaseCon(v)
+
+{
+
+	if(v=="DTOB")
+
+	{
+
+		form1.display.value=DecToBin(form1.display.value);
+
+		Disable();
+
+	}
+
+	else
+
+	{
+
+		form1.display.value=BinToDec(form1.display.value);
+
+		Enable();	
+
+	}
+
+}
+
+
+
+function DecToBin(dec)
+
+{
+
+
+
+	var bin="";
+
+	var temp=dec;
+
+	var un=false;
+
+	
+
+	temp=""+Math.round(temp);
+
+		
+
+	if(temp.charAt(0)=='-')
+
+	{
+
+		temp=temp*-1;
+
+		un=true;		
+
+	}
+
+	
+
+	while (temp>=2) 
+
+    {
+
+		var i=temp%2;
+
+        bin+=""+i;
+
+        temp=parseInt(temp/2,10);
+
+    }
+
+    bin+=temp;
+
+    var res="";
+
+	
+
+	if(un)
+
+		return "-"+StrRev(bin);
+
+    else return StrRev(bin);    
+
+}
+
+
+
+function Disable()
+
+{
+
+	var allow="10/*-+()=ClearAll ClearMRMCMS";
+
+	for(i=0;i<form1.length;i++)
+
+	{
+
+		if(allow.indexOf(form1.elements(i).value)==-1)
+
+			form1.elements(i).disabled=true;
+
+	}
+
+	form1.radio1.disabled=false;
+
+	form1.radio2.disabled=false;
+
+	form1.display.disabled=false;
+
+	form1.e.disabled=true;
+
+	form1.about.disabled=false;
+
+	form1.history.disabled=false;
+
+	
+
+	}
+
+
+
+function Enable()
+
+{
+
+	for(i=0;i<form1.length;i++)
+
+		form1.elements(i).disabled=false;
+
+	
+
+}
+
+
+
+function Pi()
+
+{
+
+	form1.display.value=Math.PI;
+
+}
+
+
+
+function About()
+
+{
+
+	alert("Scientific Calculator (Beta Version)\n");
+
+}
+
+
+
+function BinToDec(bin)
+
+{
+
+	return parseInt(bin,2);
+
+}
+
+
+
+
+
+function Evaluate()
+
+{	
+
+
+
+	var val;
+
+	if(form1.radio1.checked)
+
+		val=BinToDec(form1.display.value);
+
+	else val=form1.display.value;
+
+	
+
+	if(calculation.charAt(calculation.length-1)!=')')//for closing brace
+
+		calculation+=val;
+
+	
+
+	
+
+	if(Check(calculation))
+
+	{
+
+		val=eval(calculation);
+
+		val=val+"";//make it a string(eval makes it a number)
+
+		form1.history.value+=calculation+"="+val+"\n";
+
+		form1.history.doScroll("scrollbarPageDown");
+
+		if(form1.radio1.checked)
+
+			val=DecToBin(val);
+
+					
+
+		form1.display.value=val;
+
+		calculation="";
+
+		isstart=true;
+
+		isdec=false;
+
+	}
+
+}
+
+
+
+function Check(v)
+
+{
+
+	var valid="1234567890.+-*/()%";
+
+	for(i=0;i&
